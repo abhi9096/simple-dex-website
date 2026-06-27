@@ -1,14 +1,12 @@
 .pending-container {
     position: relative;
 }
-
 .loader {
     position: absolute;
     width: 100%;
     margin-top: 5%;
     top: 60px;
 }
-
 .state-message {
     position: absolute;
     top: 300px;
@@ -20,12 +18,22 @@
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
 .state-message p {
     margin: 0;
 }
-
 .explorer-link a{
     color: #ffffff;
     text-decoration: underline;
+}
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 8px solid #e0e0e0;
+    border-top: 8px solid #6366F1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
