@@ -2,7 +2,6 @@ import React from "react";
 import { useWeb3React } from "@web3-react/core";
 import Modal from "react-awesome-modal";
 import './pending-modal.css';
-
 const PendingModal = ({ show, width, height, effect, className, onClickAway, message, tx }) => {
     const { chainId } = useWeb3React();
     return (
@@ -12,18 +11,13 @@ const PendingModal = ({ show, width, height, effect, className, onClickAway, mes
                     <div className="spinner" style={{ marginBottom: "20px" }}></div>
                 </div>
                 <div className="flex col justify-center align-center state-message">
-                    <p className="flex">
-                        {message}
-                    </p>
+                    <p className="flex">{message}</p>
                     <p className="flex explorer-link">
-                        {
-                            tx ? <a href={`https://${chainId === 56 ? '' : 'testnet.'}bscscan.com/tx/${tx}`} target="_blank">View on explorer</a> : <></>
-                        }
+                        {tx ? <a href={`https://${chainId === 56 ? '' : 'testnet.'}bscscan.com/tx/${tx}`} target="_blank">View on explorer</a> : <></>}
                     </p>
                 </div>
             </div>
         </Modal>
     )
 }
-
 export default PendingModal;
